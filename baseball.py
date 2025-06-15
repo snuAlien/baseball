@@ -345,7 +345,8 @@ bottom_df = pd.DataFrame({
 })
 
 
-
+top_df.index = top_df.index + 1
+bottom_df.index = bottom_df.index + 1
 
 st.markdown("### 🥇 투자 효율 상위 10명")
 st.dataframe(top_df, use_container_width=True)
