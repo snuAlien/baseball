@@ -53,6 +53,14 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+* {
+    font-family: 'KBO Dia Gothic', sans-serif !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # CSS 삽입
 #st.markdown(font_css, unsafe_allow_html=True)
 
@@ -122,12 +130,11 @@ st.markdown("""
 
 # st.write('이처럼 진입 경로 중 가장 대표적인 운영 방식은 바로 KBO 신인 드래프트다. 드래프트는 리그의 균형 발전을 도모하고, 유망주에게 프로 진출의 기회를 제공하는 출발선의 제도화된 모습이다. 10개 구단이 정해진 순서대로 선수를 지명해 계약하는 이 제도는, 한 해 수많은 고교 및 대학 선수들의 희망이 걸린 기회의 장이자, 구단의 미래 전략이 응축된 무대이다.')
 
-st.markdown("- - -")
-
 #st.header('이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
 
 #st.markdown('### 이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
 
+st.write(' ')
 st.markdown("""
 <div style='
     font-family: "KBO Dia Gothic";
@@ -300,7 +307,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("- - -")
 
 #st.header('고졸 강백호 VS 대졸 전준우! 대졸보다 고졸이 선호된다?')
 
@@ -551,7 +557,6 @@ st.info(
 """
 )
 
-st.markdown("- - -")
 
 #########################################
 #st.header('투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?')
@@ -568,7 +573,7 @@ st.markdown("""
     border-radius: 8px;
     color:#ffffff ;
 '>
-투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?
+투수 류현진 vs 타자 최형우!  \n드래프트에서 우선시되는 포지션은?
 </div>
 """, unsafe_allow_html=True)
 
@@ -665,8 +670,6 @@ st.markdown("""
 # ''')
 
 
-st.markdown("- - -")
-
 #########################################
 
 #st.header('문동주 픽한 한화 VS 김택연 픽한 두산! 결국 드래프트에서 웃은 팀은?')
@@ -684,7 +687,7 @@ st.markdown("""
     border-radius: 8px;
     color:#ffffff ;
 '>
-문동주 픽한 한화 VS 김택연 픽한 두산! 결국 드래프트에서 웃은 팀은?
+문동주 픽한 한화 VS 김택연 픽한 두산!  \n결국 드래프트에서 웃은 팀은?
 </div>
 """, unsafe_allow_html=True)
 
@@ -706,17 +709,20 @@ st.markdown("""
 # </div>
 # """, unsafe_allow_html=True)
 
-st.markdown("""
-<div style="
-    font-size: 18px;
-    font-weight: 600;
-    color: #2C3E50;
-    margin-top: 20px;
-    font-family: 'KBO Dia Gothic';
-">
-계약금으로 뽕 뽑기 - 팀별 드래프트 투자 효율 순위는?
-</div>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <div style="
+#     font-size: 18px;
+#     font-weight: 600;
+#     color: #2C3E50;
+#     margin-top: 20px;
+#     font-family: 'KBO Dia Gothic';
+# ">
+# 계약금으로 뽕 뽑기 - 팀별 드래프트 투자 효율 순위는?
+# </div>
+# """, unsafe_allow_html=True)
+
+st.write(' ')
+st.markdown("#### 계약금으로 뽕 뽑기 - 팀별 드래프트 투자 효율 순위는?  ")
 
 
 # st.markdown(
@@ -793,7 +799,21 @@ st.pyplot(fig)
 
 # 선택 박스 표시
 #st.subheader("각 팀 투자 효율 Top 4")
-st.markdown("#### 각 팀 투자 효율 Top 4")
+#st.markdown("#### 각 팀 투자 효율 Top 4")
+
+st.markdown("""
+<div style="
+    font-size: 18px;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-top: 20px;
+    font-family: 'KBO Dia Gothic';
+">
+각 팀 투자 효율 Top 4
+</div>
+""", unsafe_allow_html=True)
+
+
 selected_team = st.selectbox("팀을 선택하세요", df['팀'])
 
 # 선수 정보 및 이미지 출력
@@ -804,11 +824,44 @@ if selected_team in team_info:
 # # 그래프 출력
 # st.plotly_chart(fig, use_container_width=True)
 
-st.write('각 구단에서 선수를 지명할 때, 1라운드부터 11라운드까지 계약금을 차등 지급합니다. 이때 계약금이란 구단이 해당 선수의 가치를 합리적으로 판단하여 산정한 금액일 것입니다. 이 계약금을 일종의 투자금액이라 생각하면 어떤 구단이 가장 투자 효율이 좋은지를 알아볼 수 있습니다. 아마 모두의 예상대로 결과가 도출된 듯합니다.')
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+각 구단에서 선수를 지명할 때, 1라운드부터 11라운드까지 계약금을 차등 지급한다. 이때 계약금이란 구단이 해당 선수의 가치를 합리적으로 판단하여 산정한 금액이다. 이 계약금을 일종의 투자금액이라 생각하면 어떤 구단이 가장 투자 효율이 좋은지를 알아볼 수 있다. 이를 통해 각 구단을 비교해보면, 키움이 가장 효율이 높았고 롯데가 가장 낮았다. 
+</div>
+""", unsafe_allow_html=True)
 
-st.write('*선수의 주요 활동팀이 아닌 지명팀을 기준으로 산정하였습니다. 다른 팀으로 이적하여 활약하더라도, 결국 그 선수의 가치를 첫눈에 알아본 것은 지명팀의 능력입니다.')
+#st.write('각 구단에서 선수를 지명할 때, 1라운드부터 11라운드까지 계약금을 차등 지급합니다. 이때 계약금이란 구단이 해당 선수의 가치를 합리적으로 판단하여 산정한 금액일 것입니다. 이 계약금을 일종의 투자금액이라 생각하면 어떤 구단이 가장 투자 효율이 좋은지를 알아볼 수 있습니다. 아마 모두의 예상대로 결과가 도출된 듯합니다.')
 
-st.write('*선수별 입단 연도가 달라도 통산 WAR을 기준으로 계산했습니다. 오랫동안 꾸준히 잘하는 선수는 팀을 먹여 살린 것과 같으니까요.')
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+*선수의 주요 활동팀이 아닌 지명팀을 기준으로 산정하였다. 다른 팀으로 이적하여 활약하더라도, 결국 그 선수의 가치를 첫눈에 알아본 것은 지명팀의 능력이기 때문
+            
+*선수별 입단 연도가 달라도 통산 WAR을 기준으로 계산하였다. 오랫동안 꾸준히 잘하는 선수가 팀을 먹여 살린 것과 같기 때문
+</div>
+""", unsafe_allow_html=True)
+
+#st.write('*선수의 주요 활동팀이 아닌 지명팀을 기준으로 산정하였습니다. 다른 팀으로 이적하여 활약하더라도, 결국 그 선수의 가치를 첫눈에 알아본 것은 지명팀의 능력입니다.')
+#st.write('*선수별 입단 연도가 달라도 통산 WAR을 기준으로 계산했습니다. 오랫동안 꾸준히 잘하는 선수는 팀을 먹여 살린 것과 같으니까요.')
 
 
 # st.markdown(
@@ -817,12 +870,30 @@ st.write('*선수별 입단 연도가 달라도 통산 WAR을 기준으로 계�
 # """)
 
 #st.subheader('2. 드래프트의 묘미는 예측불가능성에 있다 ')
-st.markdown("#### 2. 드래프트의 묘미는 예측불가능성에 있다")
+st.write(' ')
+st.markdown("#### 드래프트의 묘미는 예측불가능성에 있다")
 
-st.write('드래프트 지명 순위가 반드시 리그에서의 성공을 보장하지는 않습니다. LG의 문성주, 롯데의 배제성 선수처럼 하위라운드에 지명되어 폭풍성장을 겪은 선수들도 있습니다. 그럼 2014년부터 올해까지 가장 높은 투자 효율을 보여준 경우, 그리고 그 반대의 경우를 살펴 봅시다.')
+#st.write('드래프트 지명 순위가 반드시 리그에서의 성공을 보장하지는 않습니다. LG의 문성주, 롯데의 배제성 선수처럼 하위라운드에 지명되어 폭풍성장을 겪은 선수들도 있습니다. 그럼 2014년부터 올해까지 가장 높은 투자 효율을 보여준 경우, 그리고 그 반대의 경우를 살펴 봅시다.')
 
-st.title("KBO 드래프트 투자 효율 분석")
-st.subheader("WAR 기준 상위 / 하위 10명")
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+'>
+드래프트 지명 순위가 반드시 리그에서의 성공을 보장하지는 않는다. LG의 문성주, 롯데의 배제성 선수처럼 하위라운드에 지명되어 폭풍성장을 겪은 선수들도 있다. 그럼 2014년부터 올해까지 누가 가장 높은 투자 효율을 보여줬는지, 그리고 그 반대의 경우를 살펴본다.
+</div>
+""", unsafe_allow_html=True)
+
+#st.title("KBO 드래프트 투자 효율 분석")
+#st.subheader("WAR 기준 상위 / 하위 10명")
+st.write(' ')
+st.markdown('##### KBO 드래프트 투자 효율 분석')
 
 # 상위 10명 데이터
 top_df = pd.DataFrame({
@@ -846,21 +917,37 @@ bottom_df = pd.DataFrame({
 top_df.index = top_df.index + 1
 bottom_df.index = bottom_df.index + 1
 
-st.markdown("### 🥇 투자 효율 상위 10명")
+st.markdown("###### 투자 효율 상위 10명")
 st.dataframe(top_df, use_container_width=True)
 
-st.markdown("### 🥵 투자 효율 하위 10명")
+st.markdown("###### 투자 효율 하위 10명")
 st.dataframe(bottom_df, use_container_width=True)
 
 
-st.subheader('3. 우리 팀은 드래프트 전략을 잘 세우는가?')
+#st.subheader('3. 우리 팀은 드래프트 전략을 잘 세우는가?')
+st.markdown('#### 우리 팀은 드래프트 전략을 잘 세우는가?')
 
-st.write('선수들이 구단에 기여한 정도를 살펴 보았으니, 이제 구단별 신인 기용 능력을 알아봅시다.')
+#st.write('선수들이 구단에 기여한 정도를 살펴 보았으니, 이제 구단별 신인 기용 능력을 알아봅시다.')
 
-st.markdown("- - -")
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+선수들이 구단에 기여한 정도를 살펴 보았으니, 이제 구단별 신인 기용 능력을 알아보고자 한다. 
+</div>
+""", unsafe_allow_html=True)
+
 
 # 제목
-st.markdown("## 지난 12년간의 신인 드래프트에서")
+st.markdown("##### 지난 12년간의 신인 드래프트에서")
 
 # 양쪽 열로 분할
 col1, col2 = st.columns(2)
@@ -876,16 +963,17 @@ col1, col2 = st.columns(2)
 #     st.markdown("### <div style='text-align: center;'>약 61억 원</div>", unsafe_allow_html=True)
 
 with col1:
-    st.markdown("### 가장 많은 계약금을 지불한 팀", unsafe_allow_html=True)
+    st.markdown("###### 가장 많은 계약금을 지불한 팀", unsafe_allow_html=True)
     st.image("images/kiwoom.png", width=180)
-    st.markdown("### 약 87억 원", unsafe_allow_html=True)
+    st.markdown("###### 약 87억 원", unsafe_allow_html=True)
 
 with col2:
-    st.markdown("### 가장 적은 계약금을 지불한 팀", unsafe_allow_html=True)
+    st.markdown("###### 가장 적은 계약금을 지불한 팀", unsafe_allow_html=True)
     st.image("images/nc.png", width=180)
-    st.markdown("### 약 61억 원", unsafe_allow_html=True)
+    st.markdown("###### 약 61억 원", unsafe_allow_html=True)
 
-st.subheader("KBO 팀별 드래프트 효율/비용 사분면 분석")
+#st.subheader("KBO 팀별 드래프트 효율/비용 사분면 분석")
+st.markdown('##### KBO 팀별 드래프트 효율/비용 사분면 분석')
 
 # 팀별 좌표 정의 (x: 비용, y: 효율)
 teams = {
@@ -930,7 +1018,8 @@ st.pyplot(fig)
 
 
 # 제목 출력
-st.subheader("📊 팀별 투자 효율 요약")
+#st.subheader("📊 팀별 투자 효율 요약")
+st.markdown('##### 팀별 투자 효율 요약')
 
 # 데이터프레임 생성
 data = {
@@ -946,26 +1035,63 @@ data = {
 }
 
 df = pd.DataFrame(data)
+df.index = df.index + 1
 
 # 표 출력
 st.dataframe(df, use_container_width=True)
 
-st.markdown("- - -")
-
 #########################################
 
-st.header("결국 중요한 것은 예측을 불허하는 야구의 ‘낭만’")
+#st.header("결국 중요한 것은 예측을 불허하는 야구의 ‘낭만’")
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+    background-color: #08043c;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color:#ffffff ;
+'>
+결국 중요한 것은 예측을 불허하는 야구의 ‘낭만’
+</div>
+""", unsafe_allow_html=True)
+
+st.write(' ')
 
 st.image("images/4_1.png")
 st.image("images/4_2.png")
 
-st.write('휘문고, 북일고, 광주일고, 경남고… 매년 신인 드래프티 명단에는 익숙한 고등학교 출신의 선수들이 눈에 띄게 보였다. 유소년 시기부터 뛰어난 역량을 발휘한 선수가 명문고 야구부에 입학한다는 것을 고려하면, 좋은 인풋이 좋은 아웃풋을 만들어낸다고 볼 수 있다.')
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+휘문고, 북일고, 광주일고, 경남고… 매년 신인 드래프티 명단에는 익숙한 고등학교 출신의 선수들이 눈에 띄게 보였다. 유소년 시기부터 뛰어난 역량을 발휘한 선수가 명문고 야구부에 입학한다는 것을 고려하면, 좋은 인풋이 좋은 아웃풋을 만들어낸다고 볼 수 있다.
+            
+한편으로는, 명문고라는 라벨이 드래프티로 선발되기 위한 밑거름이 될 수 있다. 야구와 같은 구기종목은 팀 전체의 역량이 승패를 좌우하는 경향이 크다. 따라서 좋은 학교에 입학할수록 좋은 기록을 얻을 확률이 더 높아진다. 특히 예선을 통과해야만 출전 자격이 주어지는 고교야구 메이저 대회의 경우, 선수 개인의 실력이 좋아도 충분한 이닝 수나 타석 수를 채우지 못해 진흙 속의 진주로 남아 있게 된다.
+            
+그렇다고 해서 대학 야구도 같은 경향을 띠는 건 아니었다. 연세대와 고려대처럼 명문 야구부가 있는 학교로 알려져 있다 해도, 신인 드래프트에 선발될 가능성은 점점 희박해지고 있었다. 대학야구에서 중요한 것은, 학교의 네임밸류보다 선수의 기량이었다. 어느 스포츠에서든 신체나이가 중요하기에 대학 선수는 육성 단계를 최소화하고 바로 경기에 투입할 수 있는 즉시전력감으로 선발하는 경우가 대부분이다. 하지만 고교 선수와 대학 선수의 통산 WAR을 비교해보니 유의미한 차이가 있었다. 또, 얼리드래프트를 포함한 대학 선수 선발 추이는 꾸준히 감소하고 있다. 이에 한국야구학회 회장을 역임하고 있는 서울대학교 통계학과 장원철 교수는, ‘신인으로 선발되어도 1군 리그에서 게임을 뛰려면 엔트리에 자리가 나야 하는데, 한국 야구에는 나이가 들어도 실력을 유지하는 선수들이 많다는 것‘을 이유로 들었다. 즉, 대학 선수로서 신인 드래프트에 선발되려면 즉시 현역 엔트리에 등록될 정도의 기량을 갖추고 있어야 한다는 말이다.
+</div>
+""", unsafe_allow_html=True)
 
-st.write('한편으로는, 명문고라는 라벨이 드래프티로 선발되기 위한 밑거름이 될 수 있다. 야구와 같은 구기종목은 팀 전체의 역량이 승패를 좌우하는 경향이 크다. 따라서 좋은 학교에 입학할수록 좋은 기록을 얻을 확률이 더 높아진다. 특히 예선을 통과해야만 출전 자격이 주어지는 고교야구 메이저 대회의 경우, 선수 개인의 실력이 좋아도 충분한 이닝 수나 타석 수를 채우지 못해 진흙 속의 진주로 남아 있게 된다.')
+#st.write('휘문고, 북일고, 광주일고, 경남고… 매년 신인 드래프티 명단에는 익숙한 고등학교 출신의 선수들이 눈에 띄게 보였다. 유소년 시기부터 뛰어난 역량을 발휘한 선수가 명문고 야구부에 입학한다는 것을 고려하면, 좋은 인풋이 좋은 아웃풋을 만들어낸다고 볼 수 있다.')
 
-st.write('그렇다고 해서 대학 야구도 같은 경향을 띠는 건 아니었다. 연세대와 고려대처럼 명문 야구부가 있는 학교로 알려져 있다 해도, 신인 드래프트에 선발될 가능성은 점점 희박해지고 있었다. 대학야구에서 중요한 것은, 학교의 네임밸류보다 선수의 기량이었다. 어느 스포츠에서든 신체나이가 중요하기에 대학 선수는 육성 단계를 최소화하고 바로 경기에 투입할 수 있는 즉시전력감으로 선발하는 경우가 대부분이다. 하지만 고교 선수와 대학 선수의 통산 WAR을 비교해보니 유의미한 차이가 있었다. 또, 얼리드래프트를 포함한 대학 선수 선발 추이는 꾸준히 감소하고 있다. 이에 한국야구학회 회장을 역임하고 있는 서울대학교 통계학과 장원철 교수는, ‘신인으로 선발되어도 1군 리그에서 게임을 뛰려면 엔트리에 자리가 나야 하는데, 한국 야구에는 나이가 들어도 실력을 유지하는 선수들이 많다는 것‘을 이유로 들었다. 즉, 대학 선수로서 신인 드래프트에 선발되려면 즉시 현역 엔트리에 등록될 정도의 기량을 갖추고 있어야 한다는 말이다.')
+#st.write('한편으로는, 명문고라는 라벨이 드래프티로 선발되기 위한 밑거름이 될 수 있다. 야구와 같은 구기종목은 팀 전체의 역량이 승패를 좌우하는 경향이 크다. 따라서 좋은 학교에 입학할수록 좋은 기록을 얻을 확률이 더 높아진다. 특히 예선을 통과해야만 출전 자격이 주어지는 고교야구 메이저 대회의 경우, 선수 개인의 실력이 좋아도 충분한 이닝 수나 타석 수를 채우지 못해 진흙 속의 진주로 남아 있게 된다.')
 
+#st.write('그렇다고 해서 대학 야구도 같은 경향을 띠는 건 아니었다. 연세대와 고려대처럼 명문 야구부가 있는 학교로 알려져 있다 해도, 신인 드래프트에 선발될 가능성은 점점 희박해지고 있었다. 대학야구에서 중요한 것은, 학교의 네임밸류보다 선수의 기량이었다. 어느 스포츠에서든 신체나이가 중요하기에 대학 선수는 육성 단계를 최소화하고 바로 경기에 투입할 수 있는 즉시전력감으로 선발하는 경우가 대부분이다. 하지만 고교 선수와 대학 선수의 통산 WAR을 비교해보니 유의미한 차이가 있었다. 또, 얼리드래프트를 포함한 대학 선수 선발 추이는 꾸준히 감소하고 있다. 이에 한국야구학회 회장을 역임하고 있는 서울대학교 통계학과 장원철 교수는, ‘신인으로 선발되어도 1군 리그에서 게임을 뛰려면 엔트리에 자리가 나야 하는데, 한국 야구에는 나이가 들어도 실력을 유지하는 선수들이 많다는 것‘을 이유로 들었다. 즉, 대학 선수로서 신인 드래프트에 선발되려면 즉시 현역 엔트리에 등록될 정도의 기량을 갖추고 있어야 한다는 말이다.')
 
+st.write(' ')
 st.info(
 """
 출처: SBS 뉴스 [정진구의 해피베이스볼] 야구특기생 입시를 둘러싼 오해와 진실
@@ -976,10 +1102,29 @@ https://news.sbs.co.kr/news/endPage.do?news_id=N1003921630&plink=COPYPASTE&coope
 
 st.image("images/4_3.png")
 
-st.write("이처럼 선수들을 줄 세워 가격표를 붙이는 것이 마치 경매장의 모습을 보는 듯하지만, KBO의 신인 드래프트에서는 낙찰가가 평생의 가치를 보장하지는 않는다. 야구선수에게는 숫자로 드러나지 않는 무수한 가능성들이 기다리고 있기 때문이다.")
+#st.write("이처럼 선수들을 줄 세워 가격표를 붙이는 것이 마치 경매장의 모습을 보는 듯하지만, KBO의 신인 드래프트에서는 낙찰가가 평생의 가치를 보장하지는 않는다. 야구선수에게는 숫자로 드러나지 않는 무수한 가능성들이 기다리고 있기 때문이다.")
 
-st.write("앞서, 상위라운드로 선발된 선수일수록 KBO 리그에서의 승리 기여도가 더 높을 수 있다는 점을 살펴 보았다. 다만 이는 경향성에 불과하다. 투자효율 상위, 하위 Top10을 떠올려 보자. 고교시절 날고 기던 선수가 입단 이후 끝내 데뷔하지 못하고 방출되기도 하며, ‘하위라운드의 반란‘으로 표현할 수 있는 폭풍성장형 선수들이 나타나기도 한다. 이처럼 선수들의 잠재력을 알아보는 것이 각팀 스카우터들에게 복잡한 과제로 남아 있다.")
+#st.write("앞서, 상위라운드로 선발된 선수일수록 KBO 리그에서의 승리 기여도가 더 높을 수 있다는 점을 살펴 보았다. 다만 이는 경향성에 불과하다. 투자효율 상위, 하위 Top10을 떠올려 보자. 고교시절 날고 기던 선수가 입단 이후 끝내 데뷔하지 못하고 방출되기도 하며, ‘하위라운드의 반란‘으로 표현할 수 있는 폭풍성장형 선수들이 나타나기도 한다. 이처럼 선수들의 잠재력을 알아보는 것이 각팀 스카우터들에게 복잡한 과제로 남아 있다.")
 
-st.write("하루에도 몇 번의 예측불허 경기를 만들어내는 대한민국 프로야구, 흥미로운 데이터 뒤에 숨은 제각각의 이야기들. 이것이 천만 관중의 비결이 아닐까 싶다.")
+#st.write("하루에도 몇 번의 예측불허 경기를 만들어내는 대한민국 프로야구, 흥미로운 데이터 뒤에 숨은 제각각의 이야기들. 이것이 천만 관중의 비결이 아닐까 싶다.")
 
 
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+이처럼 선수들을 줄 세워 가격표를 붙이는 것이 마치 경매장의 모습을 보는 듯하지만, KBO의 신인 드래프트에서는 낙찰가가 평생의 가치를 보장하지는 않는다. 야구선수에게는 숫자로 드러나지 않는 무수한 가능성들이 기다리고 있기 때문이다.
+            
+앞서, 상위라운드로 선발된 선수일수록 KBO 리그에서의 승리 기여도가 더 높을 수 있다는 점을 살펴 보았다. 다만 이는 경향성에 불과하다. 투자효율 상위, 하위 Top10을 떠올려 보자. 고교시절 날고 기던 선수가 입단 이후 끝내 데뷔하지 못하고 방출되기도 하며, ‘하위라운드의 반란‘으로 표현할 수 있는 폭풍성장형 선수들이 나타나기도 한다. 이처럼 선수들의 잠재력을 알아보는 것이 각팀 스카우터들에게 복잡한 과제로 남아 있다.
+            
+하루에도 몇 번의 예측불허 경기를 만들어내는 대한민국 프로야구, 흥미로운 데이터 뒤에 숨은 제각각의 이야기들. 이것이 천만 관중의 비결이 아닐까 싶다.
+</div>
+""", unsafe_allow_html=True)
