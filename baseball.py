@@ -25,6 +25,8 @@ st.write('이처럼 진입 경로 중 가장 대표적인 운영 방식은 바�
 
 st.header('이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
 
+st.write("후에 추가")
+
 
 st.header('고졸 강백호 VS 대졸 전준우! 대졸보다 고졸이 선호된다?')
 
@@ -235,48 +237,48 @@ data = {
     '1억원 당 WAR': [2.3, 2.1, 1.85, 1.52, 1.3, 1.1, 1.1, 1.1, 0.95, 0.9]
 }
 
-# team_info = {
-#     'LG': {
-#         'players': ['문성주', '홍창기', '문보경', '양석환'],
-#         'image': 'images/lg.jpg'
-#     },
-#     '롯데': {
-#         'players': ['배제성', '윤동희', '고승민', '황성빈'],
-#         'image': 'images/lotte.jpg'
-#     },
-#     '기아': {
-#         'players': ['김호령', '박찬호', '정해영', '김도영'],
-#         'image': 'images/kia.jpg'
-#     },
-#     '두산': {
-#         'players': ['최동현', '이병휘', '곽빈', '최승용'],
-#         'image': 'images/doosan.jpg'
-#     },
-#     '삼성': {
-#         'players': ['김지찬', '김현준', '박승규', '원태인'],
-#         'image': 'images/samsung.jpg'
-#     },
-#     '키움': {
-#         'players': ['김하성', '김혜성', '송성문', '이정후'],
-#         'image': 'images/kiwoom.jpg'
-#     },
-#     '한화': {
-#         'players': ['정은원', '김태연', '주현상', '노시환'],
-#         'image': 'images/hanwha.jpg'
-#     },
-#     'KT': {
-#         'players': ['박세웅', '박영현', '심우준', '엄상백'],
-#         'image': 'images/kt.jpg'
-#     },
-#     'NC': {
-#         'players': ['신민혁', '서호철', '구창모', '김영규'],
-#         'image': 'images/nc.jpg'
-#     },
-#     'SSG': {
-#         'players': ['박성한', '최지훈', '김동엽', '조병현'],
-#         'image': 'images/ssg.jpg'
-#     },
-# }
+team_info = {
+    'LG': {
+        'players': ['문성주', '홍창기', '문보경', '양석환'],
+        'image': 'images/lg.png'
+    },
+    '롯데': {
+        'players': ['배제성', '윤동희', '고승민', '황성빈'],
+        'image': 'images/lotte.png'
+    },
+    '기아': {
+        'players': ['김호령', '박찬호', '정해영', '김도영'],
+        'image': 'images/kia.png'
+    },
+    '두산': {
+        'players': ['최동현', '이병휘', '곽빈', '최승용'],
+        'image': 'images/doosan.png'
+    },
+    '삼성': {
+        'players': ['김지찬', '김현준', '박승규', '원태인'],
+        'image': 'images/samsung.png'
+    },
+    '키움': {
+        'players': ['김하성', '김혜성', '송성문', '이정후'],
+        'image': 'images/kiwoom.png'
+    },
+    '한화': {
+        'players': ['정은원', '김태연', '주현상', '노시환'],
+        'image': 'images/hanwha.png'
+    },
+    'KT': {
+        'players': ['박세웅', '박영현', '심우준', '엄상백'],
+        'image': 'images/kt.png'
+    },
+    'NC': {
+        'players': ['신민혁', '서호철', '구창모', '김영규'],
+        'image': 'images/nc.png'
+    },
+    'SSG': {
+        'players': ['박성한', '최지훈', '김동엽', '조병현'],
+        'image': 'images/ssg.png'
+    },
+}
 
 st.subheader("KBO 팀별 드래프트 투자 효율 (통산 WAR / 억 원)")
 
@@ -294,13 +296,13 @@ ax.set_yticklabels(df['팀'], fontproperties=fontprop)
 st.pyplot(fig)
 
 # 선택 박스 표시
-st.subheader("팀 선택 시 주요 선수 정보 보기")
+st.subheader("각 팀 투자 효율 Top 4")
 selected_team = st.selectbox("팀을 선택하세요", df['팀'])
 
-# # 선수 정보 및 이미지 출력
-# if selected_team in team_info:
-#     st.image(team_info[selected_team]['image'], width=250)
-#     st.markdown("**주요 선수:** " + ", ".join(team_info[selected_team]['players']))
+# 선수 정보 및 이미지 출력
+if selected_team in team_info:
+    st.image(team_info[selected_team]['image'], width=250)
+    st.markdown("**주요 선수:** " + ", ".join(team_info[selected_team]['players']))
 
 # # 그래프 출력
 # st.plotly_chart(fig, use_container_width=True)
