@@ -92,6 +92,7 @@ for i, v in enumerate(college):
 # 제목
 fig.suptitle('고졸 vs 대졸 출신 학력 별 성적 비교', fontsize=13,fontproperties=fontprop)
 
+fig.tight_layout()
 st.pyplot(fig)
 
 
