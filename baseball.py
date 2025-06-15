@@ -42,6 +42,58 @@ st.write('''
 시각화를 통해 우리는 단순히 "누가 더 성과가 좋았는가"를 넘어서, 구단이 어떤 기준으로 선수를 선발하고 투자하는가, 그리고 학력에 따라 기회의 편차가 존재하는가와 같은 보다 구조적인 질문을 제기하고자 한다.
 ''')
 
+#시각화 1
+
+st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통산 WAR, 그리고 최근 시즌 연봉을 비교할 수 있다. 각 지표는 고졸/대졸 그룹별 평균값 또는 분포로 나타내어, 학력에 따라 나타나는 전반적인 경향을 시각적으로 보여준다. WAR은 선수의 경기 기여도를, 연봉은 시장에서의 평가 가치를 반영하는 지표로 활용되며, 두 지표를 함께 비교함으로써 학력에 따라 프로 진출 이후 성적을 조망할 수 있다.")
+
+#시각화 2
+
+# 데이터
+labels = ['인원수', '베스트 WAR', '누적 WAR']
+highschool = [49.00, 3.51, 13.86]
+college = [13.00, 3.59, 11.95]
+y = np.arange(len(labels))
+
+# 스타일
+color_hs = '#4361EE'
+color_col = '#4895EF'
+
+# Figure 및 3개 Axes 생성
+fig = plt.figure(figsize=(8, 4))
+gs = fig.add_gridspec(nrows=1, ncols=3, width_ratios=[4, 0.8, 4])
+
+# 고졸 그래프 (좌측)
+ax1 = fig.add_subplot(gs[0])
+ax1.barh(y, highschool, color=color_hs)
+ax1.set(title='고졸')
+ax1.invert_xaxis()
+ax1.set_yticks([])
+ax1.tick_params(left=False)
+for i, v in enumerate(highschool):
+    ax1.text(v - 2, i, f'{v:.2f}', va='center', ha='right', fontsize=9,fontproperties=fontprop)
+
+# 가운데 라벨 축
+axc = fig.add_subplot(gs[1])
+axc.set_xlim(0, 1)
+axc.set_ylim(-0.5, 2.5)
+axc.axis('off')  # 눈금 제거
+for i, label in enumerate(labels):
+    axc.text(0.5, i, label, ha='center', va='center', fontsize=10,fontproperties=fontprop)
+
+# 대졸 그래프 (우측)
+ax2 = fig.add_subplot(gs[2])
+ax2.barh(y, college, color=color_col)
+ax2.set(title='대졸')
+ax2.set_yticks([])
+ax2.tick_params(left=False)
+for i, v in enumerate(college):
+    ax2.text(v + 0.5, i, f'{v:.2f}', va='center', ha='left', fontsize=9,fontproperties=fontprop)
+
+# 제목
+fig.suptitle('고졸 vs 대졸 출신 학력 별 성적 비교', fontsize=13,fontproperties=fontprop)
+
+st.pyplot(fig)
+
 
 st.info(
 """
