@@ -2,16 +2,20 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
+from matplotlib import font_manager
 import plotly.figure_factory as ff
 import plotly.express as px
 from PIL import Image
 
 #그래프 폰트 설정
-font_path = 'malgun.ttf'
-fontprop = fm.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = fontprop.get_name()
-plt.rcParams['axes.unicode_minus'] = False 
+# font_path = 'malgun.ttf'
+# fontprop = fm.FontProperties(fname=font_path)
+# plt.rcParams['font.family'] = fontprop.get_name()
+# plt.rcParams['axes.unicode_minus'] = False 
+
+font_path = "./KBO Dia Gothic_medium.ttf"  # 경로 확인
+font_prop = font_manager.FontProperties(fname=font_path)
+plt.rcParams['font.family'] = font_prop.get_name()  # 전체 기본 폰트 설정
 
 # 웹폰트 로딩용 CSS 정의
 # font_css = """
@@ -191,20 +195,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# st.write('''
-# 한국 프로야구에서 선수들이 프로에 진입하는 시점은 크게 고등학교 졸업 직후 혹은 대학교 졸업 이후로 나뉜다. 일부는 실업팀이나 독립리그를 거치기도 하지만, 대다수의 선수들은 이 두 경로를 통해 드래프트에 참가하게 된다. 이 두 경로는 단순한 출신 배경의 차이를 넘어, 선수 성장의 방향, 구단의 투자 전략, 그리고 성과에 대한 보상 구조까지 연결되는 중요한 기준이 된다.
-# 이에 따라 ‘고졸이 유리한가, 대졸이 유리한가’라는 논쟁은 KBO 리그에서 꾸준히 이어져온 화두 중 하나다. 이 비교는 단순한 출신 배경을 넘어, 선수의 성장 경로와 구단의 육성 전략, 더 나아가 한국 야구 시스템의 구조적 문제까지 함축하고 있기 때문이다.
-         
-# 과거에는 선동열, 이종범, 장효조, 양준혁 등 대학을 거쳐 프로에 진출한 전설적인 스타플레이어들이 많았지만, 최근에는 이정후, 강백호, 소형준, 이의리 등 고교 졸업 직후 곧바로 프로에 입단하는 흐름이 주류로 자리잡고 있다. 이는 단순한 선택의 문제가 아니라, KBO 리그 구조와 제도적 환경이 고졸 선수에게 유리하게 작용하고 있기 때문이다.
-         
-# 실제로 대학을 거치면 군 복무 문제, FA 취득 지연, 나이 경쟁 등의 불이익이 발생하며, 구단 입장에서도 육성 기간이 짧은 고졸 유망주에게 더 빠르게 투자 수익을 거둘 수 있는 구조가 형성되어 있다.
-         
-# 이러한 흐름은 데이터상에서도 명확하게 드러난다. 2001~2012년 드래프트 선수 분석에 따르면, 고졸 출신 선수의 평균 WAR는 3.67로, 대졸 출신 선수의 1.51에 비해 2.4배에 달한다. 2022년 기준으로는 신인 드래프트에서 고졸 선수가 전체의 84%를 차지했고, 2025년 드래프트에서는 그 수치가 85%에 이르렀다. 반면 대졸 선수는 16명에 불과했으며, 대학야구계는 지속적인 지명 축소에 위기의식을 표명하고 있다.
-         
-# 따라서 본 분석에서는 선수의 학력(고졸/대졸)에 따른 프로 진출 이후의 성과를 WAR(Wins Above Replacement)와 연봉이라는 주요 지표를 중심으로 비교하고자 한다. WAR은 선수의 경기 기여도를 수치화한 지표로, 팀 승리에 얼마나 기여했는지를 보여주는 대표적인 성능 지표이며, 연봉은 해당 선수가 리그 내에서 어느 정도의 시장 가치를 인정받고 있는지를 반영하는 자료로 사용된다.
-         
-# 시각화를 통해 우리는 단순히 "누가 더 성과가 좋았는가"를 넘어서, 구단이 어떤 기준으로 선수를 선발하고 투자하는가, 그리고 학력에 따라 기회의 편차가 존재하는가와 같은 보다 구조적인 질문을 제기하고자 한다.
-# ''')
 
 #시각화 1
 
@@ -260,7 +250,22 @@ col1, col2 = st.columns(2)
 
 # 고졸 영역
 with col1:
-    st.markdown("### 고졸 대표 선수")
+    #st.markdown("### 고졸 대표 선수")
+    st.markdown("""
+    <div style='
+        font-family: "KBO Dia Gothic";
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.6;
+        background-color: #08043c;
+        padding: 12px 16px;
+        border-radius: 8px;
+        color:#ffffff ;
+    '>
+    고졸 대표 선수
+    </div>
+    """, unsafe_allow_html=True)
 
     # 버튼 클릭 즉시 인덱스 변경
     col_left, col_right = st.columns([1, 1])
@@ -277,7 +282,23 @@ with col1:
 
 # 대졸 영역
 with col2:
-    st.markdown("### 대졸 대표 선수")
+    #st.markdown("### 대졸 대표 선수")
+
+    st.markdown("""
+    <div style='
+        font-family: "KBO Dia Gothic";
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.6;
+        background-color: #08043c;
+        padding: 12px 16px;
+        border-radius: 8px;
+        color:#ffffff ;
+    '>
+    대졸 대표 선수
+    </div>
+    """, unsafe_allow_html=True)
 
     # 버튼 클릭 즉시 인덱스 변경
     col_left, col_right = st.columns([1, 1])
@@ -292,7 +313,24 @@ with col2:
     st.image(college_images[st.session_state.college_idx], use_container_width=True)
     st.markdown(f"**({st.session_state.college_idx + 1} / {len(college_images)})**")
 
-st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통산 WAR, 그리고 최근 시즌 연봉을 비교할 수 있다. 각 지표는 고졸/대졸 그룹별 평균값 또는 분포로 나타내어, 학력에 따라 나타나는 전반적인 경향을 시각적으로 보여준다. WAR은 선수의 경기 기여도를, 연봉은 시장에서의 평가 가치를 반영하는 지표로 활용되며, 두 지표를 함께 비교함으로써 학력에 따라 프로 진출 이후 성적을 조망할 수 있다.")
+#st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통산 WAR, 그리고 최근 시즌 연봉을 비교할 수 있다. 각 지표는 고졸/대졸 그룹별 평균값 또는 분포로 나타내어, 학력에 따라 나타나는 전반적인 경향을 시각적으로 보여준다. WAR은 선수의 경기 기여도를, 연봉은 시장에서의 평가 가치를 반영하는 지표로 활용되며, 두 지표를 함께 비교함으로써 학력에 따라 프로 진출 이후 성적을 조망할 수 있다.")
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통산 WAR, 그리고 최근 시즌 연봉을 비교할 수 있다. 각 지표는 고졸/대졸 그룹별 평균값 또는 분포로 나타내어, 학력에 따라 나타나는 전반적인 경향을 시각적으로 보여준다. WAR은 선수의 경기 기여도를, 연봉은 시장에서의 평가 가치를 반영하는 지표로 활용되며, 두 지표를 함께 비교함으로써 학력에 따라 프로 진출 이후 성적을 조망할 수 있다.
+</div>
+""", unsafe_allow_html=True)
+
 
 #시각화 2
 
@@ -314,11 +352,11 @@ gs = fig.add_gridspec(nrows=1, ncols=3, width_ratios=[4, 0.8, 4])
 ax1 = fig.add_subplot(gs[0])
 ax1.barh(y, highschool, color=color_hs)
 ax1.set(title='고졸')
-ax1.invert_xaxis()
+ax1.set_xlim(60, 0)
 ax1.set_yticks([])
 ax1.tick_params(left=False)
 for i, v in enumerate(highschool):
-    ax1.text(v - 2, i, f'{v:.2f}', va='center', ha='right', fontsize=9)
+    ax1.text(v + 2, i, f'{v:.2f}', va='center', ha='right', fontsize=9, fontproperties=font_prop)
 
 # 가운데 라벨 축
 axc = fig.add_subplot(gs[1])
@@ -326,19 +364,20 @@ axc.set_xlim(0, 1)
 axc.set_ylim(-0.5, 2.5)
 axc.axis('off')  # 눈금 제거
 for i, label in enumerate(labels):
-    axc.text(0.5, i, label, ha='center', va='center', fontsize=10)
+    axc.text(0.5, i, label, ha='center', va='center', fontsize=10, fontproperties=font_prop)
 
 # 대졸 그래프 (우측)
 ax2 = fig.add_subplot(gs[2])
 ax2.barh(y, college, color=color_col)
 ax2.set(title='대졸')
+ax2.set_xlim(0, 60)
 ax2.set_yticks([])
 ax2.tick_params(left=False)
 for i, v in enumerate(college):
-    ax2.text(v + 0.5, i, f'{v:.2f}', va='center', ha='left', fontsize=9)
+    ax2.text(v + 2, i, f'{v:.2f}', va='center', ha='left', fontsize=9, fontproperties=font_prop)
 
 # 제목
-fig.suptitle('고졸 vs 대졸 출신 학력 별 성적 비교', fontsize=13)
+fig.suptitle('고졸 vs 대졸 출신 학력 별 성적 비교', fontsize=13, fontproperties=font_prop)
 
 fig.tight_layout()
 st.pyplot(fig)
@@ -393,10 +432,10 @@ bars1 = ax.bar(x - width/2, pitchers, width, label='투수', color='skyblue')
 bars2 = ax.bar(x + width/2, batters, width, label='야수', color='lightcoral')
 
 # 텍스트 및 스타일 설정
-ax.set_ylabel('선수 수',fontproperties=fontprop)
-ax.set_title('상위/하위 라운드별 투수·야수 수',fontproperties=fontprop)
+ax.set_ylabel('선수 수',fontproperties=font_prop)
+ax.set_title('상위/하위 라운드별 투수·야수 수',fontproperties=font_prop)
 ax.set_xticks(x)
-ax.set_xticklabels(labels,fontproperties=fontprop)
+ax.set_xticklabels(labels,fontproperties=font_prop)
 ax.legend()
 
 # Streamlit에 출력
@@ -488,9 +527,9 @@ df = df.sort_values(by='1억원 당 WAR', ascending=True)
 # 막대그래프 출력
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.barh(df['팀'], df['1억원 당 WAR'])
-ax.set_xlabel('1억원 당 WAR',fontproperties=fontprop)
-ax.set_title('KBO 팀별 드래프트 투자 효율',fontproperties=fontprop)
-ax.set_yticklabels(df['팀'], fontproperties=fontprop)
+ax.set_xlabel('1억원 당 WAR',fontproperties=font_prop)
+ax.set_title('KBO 팀별 드래프트 투자 효율',fontproperties=font_prop)
+ax.set_yticklabels(df['팀'], fontproperties=font_prop)
 
 st.pyplot(fig)
 
@@ -615,12 +654,12 @@ ax.arrow(0, 0, 1.9, 0, head_width=0.1, head_length=0.1, fc='royalblue', ec='roya
 ax.arrow(0, 0, 0, 1.9, head_width=0.1, head_length=0.1, fc='royalblue', ec='royalblue')
 
 
-ax.text(2.1, 0, "비용", va='center', ha='left', fontsize=12, fontproperties=fontprop)
-ax.text(0, 2.1, "효율", va='bottom', ha='center', fontsize=12, fontproperties=fontprop)
+ax.text(2.1, 0, "비용", va='center', ha='left', fontsize=12, fontproperties=font_prop)
+ax.text(0, 2.1, "효율", va='bottom', ha='center', fontsize=12, fontproperties=font_prop)
 
 # 팀 위치 마킹
 for team, (x, y) in teams.items():
-    ax.text(x, y, team, fontsize=11, fontproperties=fontprop)
+    ax.text(x, y, team, fontsize=11, fontproperties=font_prop)
 
 # 스타일
 ax.set_xlim(-2, 2)
