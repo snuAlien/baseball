@@ -135,16 +135,170 @@ st.markdown("""
     font-weight: 700;
     text-align: center;
     line-height: 1.6;
-    background-color: #ffffff;
+    background-color: #08043c;
     padding: 12px 16px;
     border-radius: 8px;
-    color:#08043c ;
+    color:#ffffff ;
 '>
 이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!
 </div>
 """, unsafe_allow_html=True)
 
-st.write("후에 추가")
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+KBO 리그의 각 구단이 우승을 위해 치열한 경쟁을 펼친다면, 고교 야구부들도 다양한 대회에서 우승을 차지하기 위해 뜨거운 열정을 불태우고 있다. 고교 야구부들이 이렇게까지 열심히 하는 이유는 물론 고등학교의 위상을 높이기 위해서도 있지만, 더욱 중요한 것은 각 프로구단의 스카우터들에게 강한 인상을 남겨 자교 학생들을 더 많이 프로에 입단시키기 위함이다. 실제로 드래프트는 일종의 입시판이라고 볼 수 있기 때문에, 드래프트에서 좋은 성과를 내기 위해서는 고등학교의 영향을 무시할 수 없다. 그렇기에 야구 역시 좋은 선수들을 많이 배출하는 소위 ‘명문고’도 존재한다. 그렇다면 과연 어떤 고등학교가 야구 명문고일까? 
+</div>
+""", unsafe_allow_html=True)
+
+#시각화1
+#데이터
+schools = ['휘문고', '서울고', '장충고', '덕수고', '경남고', '광주제일고', '경북고', '북일고', '경기고', '성남고']
+counts = [50, 49, 49, 46, 45, 40, 39, 38, 37, 37]
+
+fig, ax = plt.subplots(figsize=(8, 4))
+
+bars = ax.bar(schools, counts, color='#37bceb')
+ax.set_title("드래프티 수(명)", fontsize=14, fontproperties=font_prop)
+ax.set_ylabel("명", fontproperties=font_prop)
+ax.set_ylim(0, 60)
+
+plt.xticks(fontproperties=font_prop)
+plt.yticks(fontproperties=font_prop)
+
+# 눈금선 스타일
+ax.grid(axis='y', linestyle='--', alpha=0.5)
+
+# 그래프 출력
+plt.tight_layout()
+#plt.show()
+st.pyplot(fig)
+
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+우선 2014년부터 2025년까지의 드래프트 데이터를 바탕으로 가장 많은 드래프티를 배출한 학교는 휘문고등학교였다. 무려 50명의 드래프티를 배출하였고, 실제로 휘문고는 이 기간 동안 메이저리그까지 진출한 이정후나 키움 안우진과 같은 걸출한 1차지명 선수들을 배출하기도 하며 자타가 인정하는 명문고로서의 지위를 공고히 하였다. 또한 휘문고의 뒤를 서울고와 장충고가 각각 49명으로 바짝 뒤쫓았다. 두 학교도 각각 KT 강백호, 기아 박찬호와 같이 프로 무대에서 좋은 활약을 보여주는 선수들을 다수 배출하였다.
+</div>
+""", unsafe_allow_html=True)
+
+#시각화2
+#데이터
+schools = ['하마고', '서울고', '장충고', '덕수고', '경남고', '광주일고', '제물포고', '경북고', '경기고', '성남고']
+rates = [48, 67, 65, 76, 87, 75, 46, 63, 65, 54]
+
+fig, ax = plt.subplots(figsize=(8, 4))
+bars = ax.bar(schools, rates, color='#37bceb')
+
+# y축 범위 0~100 고정
+ax.set_ylim(0, 100)
+
+# 제목 및 눈금
+ax.set_title("1군 데뷔율", fontsize=14, fontproperties=font_prop)
+ax.set_ylabel("비율 (%)", fontproperties=font_prop)
+plt.xticks(fontproperties=font_prop)
+plt.yticks(fontproperties=font_prop)
+ax.grid(axis='y', linestyle='--', alpha=0.5)
+
+# 막대 위에 수치 표시
+for i, v in enumerate(rates):
+    ax.text(i, v + 2, f'{v}%', ha='center', va='bottom', fontsize=9, fontproperties=font_prop)
+
+plt.tight_layout()
+st.pyplot(fig)
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+또한 실제 1군에 데뷔한 선수들의 비율 역시 유의미한 평가지표로 작용할 수 있다. 배출한 드래프티들이 전부 1군 무대에 데뷔하는 것은 아니기 때문에 오히려 실제로 1군에 데뷔하는 선수들의 비율을 비교해보는 것도 중요하다. 실제로 1군 데뷔율을 살펴보면, 앞서 가장 많은 드래프티를 배출한 휘문고는 단 48%로, 절반 이상의 선수들이 1군에 데뷔하지 못했다는 것을 확인할 수 있다. 반대로 경남고의 경우, 조사한 기간 내에 배출한 45명의 드래프티 가운데 39명이 1군 무대에 데뷔하며 무려 87%의 1군 데뷔율이라는 압도적인 수치를 보여줬다. 실제로 경남고는 롯데 자이언츠의 영구결번인 최동원과 이대호의 모교로서, 최근에도 한화 노시환, 키움 이주형 등 걸출한 선수들을 배출하며 명문고의 명맥을 유지하고 있음을 확인할 수 있다.
+</div>
+""", unsafe_allow_html=True)
+
+#시각화3
+#데이터
+schools = ['하마고', '서울고', '장충고', '덕수고', '경남고', '광주일고', '제물포고', '경북고', '경기고', '성남고']
+avg_war = [3.300, 2.530, 1.404, 1.083, 0.998, 1.161, 4.341, 1.114, 0.690, 1.477]
+
+fig, ax = plt.subplots(figsize=(8, 4))
+bars = ax.bar(schools, avg_war, color='#37bceb')
+
+# y축 설정
+ax.set_ylim(0, 7)
+ax.set_title("평균 WAR", fontsize=14, fontproperties=font_prop)
+ax.set_ylabel("WAR", fontproperties=font_prop)
+
+# 눈금 및 글꼴
+plt.xticks(fontproperties=font_prop)
+plt.yticks(fontproperties=font_prop)
+ax.grid(axis='y', linestyle='--', alpha=0.5)
+
+# 막대 위 숫자 표시
+for i, v in enumerate(avg_war):
+    ax.text(i, v + 0.2, f'{v:.2f}', ha='center', va='bottom', fontsize=9, fontproperties=font_prop)
+
+plt.tight_layout()
+st.pyplot(fig)
+
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+하지만 이렇게 각 고등학교들이 배출한 선수들의 수도 중요하지만, 그 선수들이 실제 1군 무대에서 얼마나 큰 활약을 하는지 역시 신경써야 할 지점이다. 배출한 선수는 조금 적을지라도, 그 선수들이 모두 1군 무대에서 중요한 위치를 차지하고 있다고 한다면 결코 무시할 수 없기 때문이다. 이렇게 양보다 질을 중요시하는 고등학교로는 경북고가 있고, 조사 기간 내에 데뷔한 경북고 선수들의 평균 WAR은 무려 4.341로 압도적인 모습이었다. 실제로 이 기간 내에 경북고에서 배출된 선수들로는 롯데 박세웅, 삼성 원태인처럼 각 팀에서 대체 불가능한 토종 1선발들이 자리잡고 있는 것을 확인할 수 있다.
+</div>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+이렇게 다양한 기준을 통해 야구 명문고를 분류해보았다. 물론 야구 명문고라고 해서 무조건 좋은 선수들을 많이 배출하는 것도 아니고, 반대의 경우에도 좋은 선수들을 충분히 배출해낼 수 있다. 다만 야구 명문고들은 학교 차원에서 야구부에 대한 지원이 적극적인 경우가 많고, 각 프로 구단의 스카우터들 역시 더 많은 관심을 쏟는 경우가 많다보니 드래프트와도 깊은 관련이 있을 수 밖에 없다. 즉 야구 명문고에 대해 분석해보는 것은 신인 드래프트를 보는 시야를 넓힐 수 있는 계기가 될 것이다. 
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("- - -")
 
@@ -341,8 +495,8 @@ college = [13.00, 3.59, 11.95]
 y = np.arange(len(labels))
 
 # 스타일
-color_hs = '#4361EE'
-color_col = '#4895EF'
+color_hs = '#37bceb'
+color_col = '#08043c'
 
 # Figure 및 3개 Axes 생성
 fig = plt.figure(figsize=(8, 4))
