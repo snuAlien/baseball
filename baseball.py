@@ -89,7 +89,7 @@ bars2 = ax.bar(x + width/2, batters, width, label='야수', color='lightcoral')
 ax.set_ylabel('선수 수',fontproperties=fontprop)
 ax.set_title('상위/하위 라운드별 투수·야수 수',fontproperties=fontprop)
 ax.set_xticks(x)
-ax.set_xticklabels(labels)
+ax.set_xticklabels(labels,fontproperties=fontprop)
 ax.legend()
 
 # Streamlit에 출력
@@ -175,8 +175,8 @@ df = df.sort_values(by='1억원 당 WAR', ascending=True)
 # 막대그래프 출력
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.barh(df['팀'], df['1억원 당 WAR'])
-ax.set_xlabel('1억원 당 WAR')
-ax.set_title('KBO 팀별 드래프트 투자 효율')
+ax.set_xlabel('1억원 당 WAR',fontproperties=fontprop)
+ax.set_title('KBO 팀별 드래프트 투자 효율',fontproperties=fontprop)
 st.pyplot(fig)
 
 # 선택 박스 표시
@@ -295,12 +295,12 @@ ax.arrow(0, 0, 1.9, 0, head_width=0.1, head_length=0.1, fc='royalblue', ec='roya
 ax.arrow(0, 0, 0, 1.9, head_width=0.1, head_length=0.1, fc='royalblue', ec='royalblue')
 
 
-ax.text(2.1, 0, "비용", va='center', ha='left', fontsize=12)
-ax.text(0, 2.1, "효율", va='bottom', ha='center', fontsize=12)
+ax.text(2.1, 0, "비용", va='center', ha='left', fontsize=12, fontproperties=fontprop)
+ax.text(0, 2.1, "효율", va='bottom', ha='center', fontsize=12, fontproperties=fontprop)
 
 # 팀 위치 마킹
 for team, (x, y) in teams.items():
-    ax.text(x, y, team, fontsize=11)
+    ax.text(x, y, team, fontsize=11, fontproperties=fontprop)
 
 # 스타일
 ax.set_xlim(-2, 2)
