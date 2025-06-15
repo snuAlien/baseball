@@ -177,6 +177,8 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.barh(df['팀'], df['1억원 당 WAR'])
 ax.set_xlabel('1억원 당 WAR',fontproperties=fontprop)
 ax.set_title('KBO 팀별 드래프트 투자 효율',fontproperties=fontprop)
+ax.set_yticklabels(df['팀'], fontproperties=fontprop)
+
 st.pyplot(fig)
 
 # 선택 박스 표시
