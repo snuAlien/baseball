@@ -48,7 +48,7 @@ st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통�
 
 #시각화 2
 
-st.wwite("aaaa")
+st.write("aaaa")
 
 # 데이터
 labels = ['인원수', '베스트 WAR', '누적 WAR']
