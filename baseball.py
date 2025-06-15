@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import plotly.figure_factory as ff
 import plotly.express as px
+from PIL import Image
 
 #그래프 폰트 설정
 font_path = 'malgun.ttf'
@@ -44,11 +45,67 @@ st.write('''
 
 #시각화 1
 
+# col1, col2 = st.columns(2)
+
+# highschool_players = ['images/2_11.png', 'images/2_12.png', 'images/2_13.png', 'images/2_14.png', 'images/2_15.png']
+# college_players = ['images/2_21.png', 'images/2_22.png', 'images/2_23.png', 'images/2_24.png', 'images/2_25.png']
+
+# #고졸 버튼
+
+# with col1:
+#     if st.button("대표적인 고졸 선수들"):
+#         st.subheader("고졸 선수들")
+#         for img_path in highschool_players:
+#             st.image(Image.open(img_path), use_container_width=True)
+
+# #대졸 버튼
+
+# with col2:
+#     if st.button("대표적인 대졸 선수들"):
+#         st.subheader("대졸 선수들")
+#         for img_path in college_players:
+#             st.image(Image.open(img_path), use_container_width=True)
+
+# 세션 상태 초기화
+if 'show_highschool' not in st.session_state:
+    st.session_state.show_highschool = False
+if 'show_college' not in st.session_state:
+    st.session_state.show_college = False
+
+# 컬럼 배치
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("대표적인 고졸 선수 🔽"):
+        st.session_state.show_highschool = not st.session_state.show_highschool
+
+with col2:
+    if st.button("대표적인 대졸 선수 🔽"):
+        st.session_state.show_college = not st.session_state.show_college
+
+# 이미지 출력
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.session_state.show_highschool:
+        st.image("images/2_11.png", use_container_width=True)
+        st.image("images/2_12.png", use_container_width=True)
+        st.image("images/2_13.png", use_container_width=True)
+        st.image("images/2_14.png", use_container_width=True)
+        st.image("images/2_15.png", use_container_width=True)
+
+with col2:
+    if st.session_state.show_college:
+        st.image("images/2_21.png", use_container_width=True)
+        st.image("images/2_22.png", use_container_width=True)
+        st.image("images/2_23.png", use_container_width=True)
+        st.image("images/2_24.png", use_container_width=True)
+        st.image("images/2_25.png", use_container_width=True)
+
+
 st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통산 WAR, 그리고 최근 시즌 연봉을 비교할 수 있다. 각 지표는 고졸/대졸 그룹별 평균값 또는 분포로 나타내어, 학력에 따라 나타나는 전반적인 경향을 시각적으로 보여준다. WAR은 선수의 경기 기여도를, 연봉은 시장에서의 평가 가치를 반영하는 지표로 활용되며, 두 지표를 함께 비교함으로써 학력에 따라 프로 진출 이후 성적을 조망할 수 있다.")
 
 #시각화 2
-
-st.write("aaaa")
 
 # 데이터
 labels = ['인원수', '베스트 WAR', '누적 WAR']
