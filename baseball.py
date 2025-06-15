@@ -13,26 +13,136 @@ fontprop = fm.FontProperties(fname=font_path)
 plt.rcParams['font.family'] = fontprop.get_name()
 plt.rcParams['axes.unicode_minus'] = False 
 
+# 웹폰트 로딩용 CSS 정의
+# font_css = """
+# <style>
+# @font-face {
+#     font-family: 'KBO Dia Gothic_bold';
+#     src: url('./KBO Dia Gothic_bold.ttf') format('truetype');
+#     font-weight: 1000;
+# }
+# @font-face {
+#     font-family: 'Malgun';
+#     src: url('./malgun.ttf') format('truetype');
+#     font-weight: normal;
+# }
+# </style>
+# """
+
+st.markdown("""
+<style>
+@font-face {
+    font-family: 'KBO Dia Gothic';
+    src: url('./KBO Dia Gothic_light.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'KBO Dia Gothic';
+    src: url('./KBO Dia Gothic_medium.ttf') format('truetype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'KBO Dia Gothic';
+    src: url('./KBO Dia Gothic_bold.ttf') format('truetype');
+    font-weight: 700;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# CSS 삽입
+#st.markdown(font_css, unsafe_allow_html=True)
+
 # Webpage Title
 #st.title("Streamlit으로 만드는 데이터 앱")
 #st.title('“제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?')
 
-st.markdown("### “제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?")
+#st.markdown("### “제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?")
+# st.markdown("""
+# <div style='font-family: "KBO Dia Gothic_bold"; font-size: 24px;'>
+# “제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?
+# </div>
+# """, unsafe_allow_html=True)
 
-st.write('1')
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+    background-color: #08043c;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color:#ffffff ;
+'>
+“제 2의 김도영이 될래요”<br>그들은 어떻게 KBO의 별이 되었을까?
+</div>
+""", unsafe_allow_html=True)
 
-#st.header("Streamlit이란?")
+st.write(' ') #enter
 
-st.write('2025 시즌 이후 한국 프로야구(KBO)는 뜨거운 관심을 받고 있다. 특히 젊은 팬 층의 유입과 함께 선수 개인의 커리어, 성장 과정, 그리고 미래 유망주에 대한 주목도가 크게 증가했다. 그렇다면, 야구 선수는 어떻게 프로가 되는 것일까? KBO 리그에서 선수가 되는 길은 다양하다. 신인 드래프트를 통해 지명을 받는 ‘드래프티’ 외에도, 육성선수로 계약해 2군에서 실력을 쌓은 뒤 1군에 등록하거나, 독립리그 출신 선수, 대학 혹은 실업야구를 거쳐 신고선수로 입단하는 사례도 있다. 다른 팀과 계약이 끝난 뒤 이적하는 자유계약선수(FA), 그리고 외국인 선수도 팀의 핵심 자원으로 활약한다.')
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+'>
+2025 시즌 이후 한국 프로야구(KBO)는 뜨거운 관심을 받고 있다. 특히 젊은 팬 층의 유입과 함께 선수 개인의 커리어, 성장 과정, 그리고 미래 유망주에 대한 주목도가 크게 증가했다. 그렇다면, 야구 선수는 어떻게 프로가 되는 것일까? KBO 리그에서 선수가 되는 길은 다양하다. 신인 드래프트를 통해 지명을 받는 ‘드래프티’ 외에도, 육성선수로 계약해 2군에서 실력을 쌓은 뒤 1군에 등록하거나, 독립리그 출신 선수, 대학 혹은 실업야구를 거쳐 신고선수로 입단하는 사례도 있다. 다른 팀과 계약이 끝난 뒤 이적하는 자유계약선수(FA), 그리고 외국인 선수도 팀의 핵심 자원으로 활약한다.
+</div>
+""", unsafe_allow_html=True)
 
-st.write('이처럼 진입 경로 중 가장 대표적인 운영 방식은 바로 KBO 신인 드래프트다. 드래프트는 리그의 균형 발전을 도모하고, 유망주에게 프로 진출의 기회를 제공하는 출발선의 제도화된 모습이다. 10개 구단이 정해진 순서대로 선수를 지명해 계약하는 이 제도는, 한 해 수많은 고교 및 대학 선수들의 희망이 걸린 기회의 장이자, 구단의 미래 전략이 응축된 무대이다.')
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-radius: 12px;
+    color: #2C3E50;
+    margin-top: 24px;
+'>
+이처럼 진입 경로 중 가장 대표적인 운영 방식은 바로 KBO 신인 드래프트다. 드래프트는 리그의 균형 발전을 도모하고, 유망주에게 프로 진출의 기회를 제공하는 출발선의 제도화된 모습이다. 10개 구단이 정해진 순서대로 선수를 지명해 계약하는 이 제도는, 한 해 수많은 고교 및 대학 선수들의 희망이 걸린 기회의 장이자, 구단의 미래 전략이 응축된 무대이다.
+</div>
+""", unsafe_allow_html=True)
+
+# st.write(' ')
+
+# st.write('2025 시즌 이후 한국 프로야구(KBO)는 뜨거운 관심을 받고 있다. 특히 젊은 팬 층의 유입과 함께 선수 개인의 커리어, 성장 과정, 그리고 미래 유망주에 대한 주목도가 크게 증가했다. 그렇다면, 야구 선수는 어떻게 프로가 되는 것일까? KBO 리그에서 선수가 되는 길은 다양하다. 신인 드래프트를 통해 지명을 받는 ‘드래프티’ 외에도, 육성선수로 계약해 2군에서 실력을 쌓은 뒤 1군에 등록하거나, 독립리그 출신 선수, 대학 혹은 실업야구를 거쳐 신고선수로 입단하는 사례도 있다. 다른 팀과 계약이 끝난 뒤 이적하는 자유계약선수(FA), 그리고 외국인 선수도 팀의 핵심 자원으로 활약한다.')
+
+# st.write('이처럼 진입 경로 중 가장 대표적인 운영 방식은 바로 KBO 신인 드래프트다. 드래프트는 리그의 균형 발전을 도모하고, 유망주에게 프로 진출의 기회를 제공하는 출발선의 제도화된 모습이다. 10개 구단이 정해진 순서대로 선수를 지명해 계약하는 이 제도는, 한 해 수많은 고교 및 대학 선수들의 희망이 걸린 기회의 장이자, 구단의 미래 전략이 응축된 무대이다.')
+
+st.markdown("- - -")
 
 #st.header('이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
 
-st.markdown('### 이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
+#st.markdown('### 이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
+
+st.markdown("""
+<div style='
+    font-family: "KBO Dia Gothic";
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+    background-color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color:#08043c ;
+'>
+이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!
+</div>
+""", unsafe_allow_html=True)
 
 st.write("후에 추가")
 
+st.markdown("- - -")
 
 #st.header('고졸 강백호 VS 대졸 전준우! 대졸보다 고졸이 선호된다?')
 
@@ -205,10 +315,12 @@ st.info(
 """
 )
 
+st.markdown("- - -")
+
 #########################################
 #st.header('투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?')
 
-st.markdown('투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?')
+st.markdown("### 투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?")
 
 st.write('''
 야구 선수를 딱 두 범주로 나눠본다면, 투수와 타자로 나눌 수 있다. 공을 던지는 투수와 그 공을 치는 타자는 야구를 이루는 가장 본질적이고 핵심적인 요소이지만, 또 완전히 구별되는 특성을 지녔기 때문에 이 둘 사이의 비교는 언제나 흥미롭다. 그렇다면 과연 드래프트 과정에서, 그리고 이후 프로 무대에서 투수와 타자는 어떠한 차이가 있는지 알아보자.
@@ -257,6 +369,9 @@ st.write('''또한 이 기간 동안 뽑힌 1차 지명자의 비율을 확인�
          
  이렇게 투수와 타자를 비교해보았지만, 이러한 비교에는 한계가 있다. 결국 투수와 타자는 훈련법부터 신경써야 하는 부분까지 전부 다르기 때문이다. 흔히 투수와 타자의 가치를 평가하는데 쓰이는 WAR을 구하는 방식 역시 완전히 다르기 때문에, 두 포지션의 선수들을 단순히 비교하는 것은 사실상 큰 의미가 없다. 본문에서는 드래프트와 그 직후의 과정에서 투수와 타자의 데이터가 어떻게 다른지를 알아본 것 뿐이고, 결국 이후의 프로 무대에서는 투수와 타자의 각 분야에서 어떻게 살아남느냐가 중요하다는 것이다.
 ''')
+
+
+st.markdown("- - -")
 
 #########################################
 
@@ -402,6 +517,8 @@ st.subheader('3. 우리 팀은 드래프트 전략을 잘 세우는가?')
 
 st.write('선수들이 구단에 기여한 정도를 살펴 보았으니, 이제 구단별 신인 기용 능력을 알아봅시다.')
 
+st.markdown("- - -")
+
 # 제목
 st.markdown("## 지난 12년간의 신인 드래프트에서")
 
@@ -493,6 +610,7 @@ df = pd.DataFrame(data)
 # 표 출력
 st.dataframe(df, use_container_width=True)
 
+st.markdown("- - -")
 
 #########################################
 
