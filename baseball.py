@@ -48,6 +48,8 @@ st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통�
 
 #시각화 2
 
+st.wwite("aaaa")
+
 # 데이터
 labels = ['인원수', '베스트 WAR', '누적 WAR']
 highschool = [49.00, 3.51, 13.86]
@@ -70,7 +72,7 @@ ax1.invert_xaxis()
 ax1.set_yticks([])
 ax1.tick_params(left=False)
 for i, v in enumerate(highschool):
-    ax1.text(v - 2, i, f'{v:.2f}', va='center', ha='right', fontsize=9,fontproperties=fontprop)
+    ax1.text(v - 2, i, f'{v:.2f}', va='center', ha='right', fontsize=9)
 
 # 가운데 라벨 축
 axc = fig.add_subplot(gs[1])
@@ -78,7 +80,7 @@ axc.set_xlim(0, 1)
 axc.set_ylim(-0.5, 2.5)
 axc.axis('off')  # 눈금 제거
 for i, label in enumerate(labels):
-    axc.text(0.5, i, label, ha='center', va='center', fontsize=10,fontproperties=fontprop)
+    axc.text(0.5, i, label, ha='center', va='center', fontsize=10)
 
 # 대졸 그래프 (우측)
 ax2 = fig.add_subplot(gs[2])
@@ -87,10 +89,10 @@ ax2.set(title='대졸')
 ax2.set_yticks([])
 ax2.tick_params(left=False)
 for i, v in enumerate(college):
-    ax2.text(v + 0.5, i, f'{v:.2f}', va='center', ha='left', fontsize=9,fontproperties=fontprop)
+    ax2.text(v + 0.5, i, f'{v:.2f}', va='center', ha='left', fontsize=9)
 
 # 제목
-fig.suptitle('고졸 vs 대졸 출신 학력 별 성적 비교', fontsize=13,fontproperties=fontprop)
+fig.suptitle('고졸 vs 대졸 출신 학력 별 성적 비교', fontsize=13)
 
 fig.tight_layout()
 st.pyplot(fig)
