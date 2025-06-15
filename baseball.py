@@ -64,7 +64,9 @@ st.write('''
 ######################################### 시각화
 
 #그래프 폰트 설정
-plt.rcParams['font.family'] = 'Malgun Gothic'  # Windows
+font_path = 'malgun.ttf'
+fontprop = fm.FontProperties(fname=font_path, size=12)
+plt.rcParams['font.family'] = fontprop.get_name()
 plt.rcParams['axes.unicode_minus'] = False 
 
 # 제목
