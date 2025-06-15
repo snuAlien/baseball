@@ -6,6 +6,12 @@ import matplotlib.font_manager as fm
 import plotly.figure_factory as ff
 import plotly.express as px
 
+#그래프 폰트 설정
+font_path = 'malgun.ttf'
+fontprop = fm.FontProperties(fname=font_path)
+plt.rcParams['font.family'] = fontprop.get_name()
+plt.rcParams['axes.unicode_minus'] = False 
+
 # Webpage Title
 #st.title("Streamlit으로 만드는 데이터 앱")
 st.title('“제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?')
@@ -63,12 +69,6 @@ st.write('''
 
 ######################################### 시각화
 
-#그래프 폰트 설정
-font_path = './malgun.ttf'
-fontprop = fm.FontProperties(fname=font_path, size=12)
-plt.rcParams['font.family'] = fontprop.get_name()
-plt.rcParams['axes.unicode_minus'] = False 
-
 # 제목
 st.subheader("상위/하위 라운드별 투수·야수 수")
 
@@ -86,8 +86,8 @@ bars1 = ax.bar(x - width/2, pitchers, width, label='투수', color='skyblue')
 bars2 = ax.bar(x + width/2, batters, width, label='야수', color='lightcoral')
 
 # 텍스트 및 스타일 설정
-ax.set_ylabel('선수 수')
-ax.set_title('상위/하위 라운드별 투수·야수 수')
+ax.set_ylabel('선수 수',fontproperties=fontprop)
+ax.set_title('상위/하위 라운드별 투수·야수 수',fontproperties=fontprop)
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
 ax.legend()
