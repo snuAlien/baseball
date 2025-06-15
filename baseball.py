@@ -15,7 +15,9 @@ plt.rcParams['axes.unicode_minus'] = False
 
 # Webpage Title
 #st.title("Streamlit으로 만드는 데이터 앱")
-st.title('“제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?')
+#st.title('“제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?')
+
+st.markdown("### “제 2의 김도영이 될래요”... 그들은 어떻게 KBO의 별이 되었을까?")
 
 #st.header("Streamlit이란?")
 
@@ -23,12 +25,16 @@ st.write('2025 시즌 이후 한국 프로야구(KBO)는 뜨거운 관심을 받
 
 st.write('이처럼 진입 경로 중 가장 대표적인 운영 방식은 바로 KBO 신인 드래프트다. 드래프트는 리그의 균형 발전을 도모하고, 유망주에게 프로 진출의 기회를 제공하는 출발선의 제도화된 모습이다. 10개 구단이 정해진 순서대로 선수를 지명해 계약하는 이 제도는, 한 해 수많은 고교 및 대학 선수들의 희망이 걸린 기회의 장이자, 구단의 미래 전략이 응축된 무대이다.')
 
-st.header('이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
+#st.header('이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
+
+st.markdown('### 이정후의 휘문 VS 박세웅의 경북! 진짜 야구 명문고를 찾아라!')
 
 st.write("후에 추가")
 
 
-st.header('고졸 강백호 VS 대졸 전준우! 대졸보다 고졸이 선호된다?')
+#st.header('고졸 강백호 VS 대졸 전준우! 대졸보다 고졸이 선호된다?')
+
+st.markdown('### 고졸 강백호 VS 대졸 전준우! 대졸보다 고졸이 선호된다?')
 
 st.write('''
 한국 프로야구에서 선수들이 프로에 진입하는 시점은 크게 고등학교 졸업 직후 혹은 대학교 졸업 이후로 나뉜다. 일부는 실업팀이나 독립리그를 거치기도 하지만, 대다수의 선수들은 이 두 경로를 통해 드래프트에 참가하게 된다. 이 두 경로는 단순한 출신 배경의 차이를 넘어, 선수 성장의 방향, 구단의 투자 전략, 그리고 성과에 대한 보상 구조까지 연결되는 중요한 기준이 된다.
@@ -47,63 +53,89 @@ st.write('''
 
 #시각화 1
 
+# # 세션 상태 초기화
+# if 'show_highschool' not in st.session_state:
+#     st.session_state.show_highschool = False
+# if 'show_college' not in st.session_state:
+#     st.session_state.show_college = False
+
+# # 컬럼 배치
 # col1, col2 = st.columns(2)
 
-# highschool_players = ['images/2_11.png', 'images/2_12.png', 'images/2_13.png', 'images/2_14.png', 'images/2_15.png']
-# college_players = ['images/2_21.png', 'images/2_22.png', 'images/2_23.png', 'images/2_24.png', 'images/2_25.png']
-
-# #고졸 버튼
-
 # with col1:
-#     if st.button("대표적인 고졸 선수들"):
-#         st.subheader("고졸 선수들")
-#         for img_path in highschool_players:
-#             st.image(Image.open(img_path), use_container_width=True)
-
-# #대졸 버튼
+#     if st.button("대표적인 고졸 선수 🔽"):
+#         st.session_state.show_highschool = not st.session_state.show_highschool
 
 # with col2:
-#     if st.button("대표적인 대졸 선수들"):
-#         st.subheader("대졸 선수들")
-#         for img_path in college_players:
-#             st.image(Image.open(img_path), use_container_width=True)
+#     if st.button("대표적인 대졸 선수 🔽"):
+#         st.session_state.show_college = not st.session_state.show_college
+
+# # 이미지 출력
+# col1, col2 = st.columns(2)
+
+# with col1:
+#     if st.session_state.show_highschool:
+#         st.image("images/2_11.png", use_container_width=True)
+#         st.image("images/2_12.png", use_container_width=True)
+#         st.image("images/2_13.png", use_container_width=True)
+#         st.image("images/2_14.png", use_container_width=True)
+#         st.image("images/2_15.png", use_container_width=True)
+
+# with col2:
+#     if st.session_state.show_college:
+#         st.image("images/2_21.png", use_container_width=True)
+#         st.image("images/2_22.png", use_container_width=True)
+#         st.image("images/2_23.png", use_container_width=True)
+#         st.image("images/2_24.png", use_container_width=True)
+#         st.image("images/2_25.png", use_container_width=True)
+
+
+# 이미지 리스트
+high_school_images = ["images/2_11.png", "images/2_12.png", "images/2_13.png", "images/2_14.png", "images/2_15.png"]
+college_images = ["images/2_21.png", "images/2_22.png", "images/2_23.png", "images/2_24.png", "images/2_25.png"]
 
 # 세션 상태 초기화
-if 'show_highschool' not in st.session_state:
-    st.session_state.show_highschool = False
-if 'show_college' not in st.session_state:
-    st.session_state.show_college = False
+if "high_idx" not in st.session_state:
+    st.session_state.high_idx = 0
+if "college_idx" not in st.session_state:
+    st.session_state.college_idx = 0
 
-# 컬럼 배치
+# 좌우 분할
 col1, col2 = st.columns(2)
 
+# 고졸 영역
 with col1:
-    if st.button("대표적인 고졸 선수 🔽"):
-        st.session_state.show_highschool = not st.session_state.show_highschool
+    st.markdown("### 고졸 대표 선수")
 
+    # 버튼 클릭 즉시 인덱스 변경
+    col_left, col_right = st.columns([1, 1])
+    with col_left:
+        if st.button("◀", key="high_prev"):
+            st.session_state.high_idx = (st.session_state.high_idx - 1) % len(high_school_images)
+    with col_right:
+        if st.button("▶", key="high_next"):
+            st.session_state.high_idx = (st.session_state.high_idx + 1) % len(high_school_images)
+
+    # 이미지 및 현재 인덱스 표시
+    st.image(high_school_images[st.session_state.high_idx], use_container_width=True)
+    st.markdown(f"**({st.session_state.high_idx + 1} / {len(high_school_images)})**")
+
+# 대졸 영역
 with col2:
-    if st.button("대표적인 대졸 선수 🔽"):
-        st.session_state.show_college = not st.session_state.show_college
+    st.markdown("### 대졸 대표 선수")
 
-# 이미지 출력
-col1, col2 = st.columns(2)
+    # 버튼 클릭 즉시 인덱스 변경
+    col_left, col_right = st.columns([1, 1])
+    with col_left:
+        if st.button("◀", key="college_prev"):
+            st.session_state.college_idx = (st.session_state.college_idx - 1) % len(college_images)
+    with col_right:
+        if st.button("▶", key="college_next"):
+            st.session_state.college_idx = (st.session_state.college_idx + 1) % len(college_images)
 
-with col1:
-    if st.session_state.show_highschool:
-        st.image("images/2_11.png", use_container_width=True)
-        st.image("images/2_12.png", use_container_width=True)
-        st.image("images/2_13.png", use_container_width=True)
-        st.image("images/2_14.png", use_container_width=True)
-        st.image("images/2_15.png", use_container_width=True)
-
-with col2:
-    if st.session_state.show_college:
-        st.image("images/2_21.png", use_container_width=True)
-        st.image("images/2_22.png", use_container_width=True)
-        st.image("images/2_23.png", use_container_width=True)
-        st.image("images/2_24.png", use_container_width=True)
-        st.image("images/2_25.png", use_container_width=True)
-
+    # 이미지 및 현재 인덱스 표시
+    st.image(college_images[st.session_state.college_idx], use_container_width=True)
+    st.markdown(f"**({st.session_state.college_idx + 1} / {len(college_images)})**")
 
 st.write("다음으로 고졸 선수군과 대졸 선수군의 최근 WAR, 통산 WAR, 그리고 최근 시즌 연봉을 비교할 수 있다. 각 지표는 고졸/대졸 그룹별 평균값 또는 분포로 나타내어, 학력에 따라 나타나는 전반적인 경향을 시각적으로 보여준다. WAR은 선수의 경기 기여도를, 연봉은 시장에서의 평가 가치를 반영하는 지표로 활용되며, 두 지표를 함께 비교함으로써 학력에 따라 프로 진출 이후 성적을 조망할 수 있다.")
 
@@ -172,7 +204,10 @@ st.info(
 )
 
 #########################################
-st.header('투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?')
+#st.header('투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?')
+
+st.markdown('투수 류현진 vs 타자 최형우! 드래프트에서 우선시되는 포지션은?')
+
 st.write('''
 야구 선수를 딱 두 범주로 나눠본다면, 투수와 타자로 나눌 수 있다. 공을 던지는 투수와 그 공을 치는 타자는 야구를 이루는 가장 본질적이고 핵심적인 요소이지만, 또 완전히 구별되는 특성을 지녔기 때문에 이 둘 사이의 비교는 언제나 흥미롭다. 그렇다면 과연 드래프트 과정에서, 그리고 이후 프로 무대에서 투수와 타자는 어떠한 차이가 있는지 알아보자.
          
@@ -184,7 +219,8 @@ st.write('''
 ######################################### 시각화
 
 # 제목
-st.subheader("상위/하위 라운드별 투수·야수 수")
+#st.subheader("상위/하위 라운드별 투수·야수 수")
+st.markdown("#### 상위/하위 라운드별 투수·야수 수")
 
 # 데이터 정의
 labels = ['상위 라운드', '하위 라운드']
@@ -222,9 +258,11 @@ st.write('''또한 이 기간 동안 뽑힌 1차 지명자의 비율을 확인�
 
 #########################################
 
-st.header('문동주 픽한 한화 VS 김택연 픽한 두산! 결국 드래프트에서 웃은 팀은?')
+#st.header('문동주 픽한 한화 VS 김택연 픽한 두산! 결국 드래프트에서 웃은 팀은?')
+st.markdown('### 문동주 픽한 한화 VS 김택연 픽한 두산! 결국 드래프트에서 웃은 팀은?')
 
-st.subheader('1. 계약금으로 뽕 뽑기 - 팀별 드래프트 투자 효율 순위는? ')
+#st.subheader('1. 계약금으로 뽕 뽑기 - 팀별 드래프트 투자 효율 순위는? ')
+st.markdown('#### 1. 계약금으로 뽕 뽑기 - 팀별 드래프트 투자 효율 순위는?')
 
 # st.markdown(
 # """
@@ -280,7 +318,8 @@ team_info = {
     },
 }
 
-st.subheader("KBO 팀별 드래프트 투자 효율 (통산 WAR / 억 원)")
+#st.subheader("KBO 팀별 드래프트 투자 효율 (통산 WAR / 억 원)")
+st.markdown("#### KBO 팀별 드래프트 투자 효율 (통산 WAR / 억 원)")
 
 # 데이터프레임 변환 및 정렬
 df = pd.DataFrame(data)
@@ -296,7 +335,8 @@ ax.set_yticklabels(df['팀'], fontproperties=fontprop)
 st.pyplot(fig)
 
 # 선택 박스 표시
-st.subheader("각 팀 투자 효율 Top 4")
+#st.subheader("각 팀 투자 효율 Top 4")
+st.markdown("#### 각 팀 투자 효율 Top 4")
 selected_team = st.selectbox("팀을 선택하세요", df['팀'])
 
 # 선수 정보 및 이미지 출력
@@ -319,7 +359,8 @@ st.write('*선수별 입단 연도가 달라도 통산 WAR을 기준으로 계�
 # 2. 드래프트의 묘미는 예측불가능성에 있다           
 # """)
 
-st.subheader('2. 드래프트의 묘미는 예측불가능성에 있다 ')
+#st.subheader('2. 드래프트의 묘미는 예측불가능성에 있다 ')
+st.markdown("#### 2. 드래프트의 묘미는 예측불가능성에 있다")
 
 st.write('드래프트 지명 순위가 반드시 리그에서의 성공을 보장하지는 않습니다. LG의 문성주, 롯데의 배제성 선수처럼 하위라운드에 지명되어 폭풍성장을 겪은 선수들도 있습니다. 그럼 2014년부터 올해까지 가장 높은 투자 효율을 보여준 경우, 그리고 그 반대의 경우를 살펴 봅시다.')
 
